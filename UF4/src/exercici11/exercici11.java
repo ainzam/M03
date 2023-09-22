@@ -16,19 +16,29 @@ public class exercici11 {
 		for (int i = 0; i < 10; i++) {
 			vector[i] = leer.nextInt();
 		}
+		int i = 0;
 
-		for (int i = 0; i < vector.length - 1; i++) {
-			for (int j = i + 1; j < vector.length; j++) {
-				if (vector[i] == vector[j]) {
-					hay = true;
-				}
+		if (vector[0] < vector[1]) {
+
+			while (i <= vector.length && vector[i] < vector[i + 1]) {
+				i++;
 			}
 
-		}
-		if (hay) {
-			System.out.println("Hay numeros repetidos");
+			if (vector[i] > vector[i + 1]) {
+				System.out.println("NO estan ordenats");
+			} else {
+				System.out.println("SI estan ordenats");
+			}
 		} else {
-			System.out.println("NO hay numeros repetidos");
+			while (i <= vector.length && vector[i] > vector[i + 1]) {
+				i++;
+			}
+
+			if (vector[i] < vector[i + 1]) {
+				System.out.println("NO estan ordenats");
+			} else {
+				System.out.println("SI estan ordenats");
+			}
 		}
 
 	}
