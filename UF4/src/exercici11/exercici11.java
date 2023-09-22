@@ -1,8 +1,8 @@
-package exercici10;
+package exercici11;
 
 import java.util.Scanner;
 
-public class exercici10 {
+public class exercici11 {
 	private static Scanner leer;
 
 	public static void main(String[] args) {
@@ -10,8 +10,6 @@ public class exercici10 {
 		leer = new Scanner(System.in);
 
 		int[] vector = new int[10];
-
-		boolean hay = false;
 
 		System.out.println("Introduce números. El cero para salir");
 
@@ -34,5 +32,4 @@ public class exercici10 {
 		}
 
 	}
-
 }
