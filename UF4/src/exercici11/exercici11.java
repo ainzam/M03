@@ -3,43 +3,45 @@ package exercici11;
 import java.util.Scanner;
 
 public class exercici11 {
-	private static Scanner leer;
-
 	public static void main(String[] args) {
 
-		leer = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 
-		int[] vector = new int[10];
+		System.out.print("Introduce la longitud del vector: ");
+		int n = sc.nextInt();
 
-		System.out.println("Introduce números. El cero para salir");
+		int[] vector = new int[n];
 
-		for (int i = 0; i < 10; i++) {
-			vector[i] = leer.nextInt();
+		System.out.println("Introduce los valores del vector:");
+		for (int i = 0; i < n; i++) {
+			vector[i] = sc.nextInt();
 		}
-		int i = 0;
 
-		if (vector[0] < vector[1]) {
+		boolean Asc = true;
+		boolean Desc = true;
 
-			while (i <= vector.length && vector[i] < vector[i + 1]) {
-				i++;
-			}
-
+		for (int i = 0; i < n - 1; i++) {
 			if (vector[i] > vector[i + 1]) {
-				System.out.println("NO estan ordenats");
-			} else {
-				System.out.println("SI estan ordenats");
-			}
-		} else {
-			while (i <= vector.length && vector[i] > vector[i + 1]) {
-				i++;
-			}
-
-			if (vector[i] < vector[i + 1]) {
-				System.out.println("NO estan ordenats");
-			} else {
-				System.out.println("SI estan ordenats");
+				Asc = false;
+				break;
 			}
 		}
 
+		for (int i = 0; i < n - 1; i++) {
+			if (vector[i] < vector[i + 1]) {
+				Desc = false;
+				break;
+			}
+		}
+
+		if (Asc) {
+			System.out.println("El vector está ordenado en forma ascendente.");
+		} else if (Desc) {
+			System.out.println("El vector está ordenado en forma descendente.");
+		} else {
+			System.out.println("El vector no está ordenado.");
+		}
+
+		sc.close();
 	}
 }

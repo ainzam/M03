@@ -19,8 +19,8 @@ public class exercici10 {
 			vector[i] = leer.nextInt();
 		}
 
-		for (int i = 0; i < vector.length - 1; i++) {
-			for (int j = i + 1; j < vector.length; j++) {
+		for (int i = 0; i < 10; i++) {
+			for (int j = i + 1; j < 10; j++) {
 				if (vector[i] == vector[j]) {
 					hay = true;
 				}
