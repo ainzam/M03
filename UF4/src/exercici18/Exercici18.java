@@ -1,3 +1,5 @@
+package exercici18;
+
 import java.util.Scanner;
 
 public class Exercici18 {
