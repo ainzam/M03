@@ -22,7 +22,7 @@ public class Main {
 		// Calcular e imprimir los perímetros
 		for (Figura figura : figuras) {
 			double perimetre = figura.calcularPerimetre();
-			System.out.println("Perímetro: " + perimetre);
+			System.out.println("Perímetro: " + perimetre + figura);
 		}
 	}
 }
