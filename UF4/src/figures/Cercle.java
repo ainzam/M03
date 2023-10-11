@@ -26,4 +26,10 @@ public class Cercle extends Figura {
 		this.centre = centre;
 	}
 
+	@Override
+	public String toString() {
+
+		return nom;
+	}
+
 }

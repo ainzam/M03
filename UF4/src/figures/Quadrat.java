@@ -17,4 +17,9 @@ public class Quadrat extends Figura {
 		this.costat = costat;
 	}
 
+	@Override
+	public String toString() {
+
+		return nom;
+	}
 }
