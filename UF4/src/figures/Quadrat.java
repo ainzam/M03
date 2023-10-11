@@ -8,4 +8,13 @@ public class Quadrat extends Figura {
 		// TODO Auto-generated method stub
 		return 4 * costat;
 	}
+
+	public int getCostat() {
+		return costat;
+	}
+
+	public void setCostat(int costat) {
+		this.costat = costat;
+	}
+
 }

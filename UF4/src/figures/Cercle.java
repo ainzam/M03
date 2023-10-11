@@ -9,4 +9,21 @@ public class Cercle extends Figura {
 		// TODO Auto-generated method stub
 		return 2 * 3.1416 * radi;
 	}
+
+	public int getRadi() {
+		return radi;
+	}
+
+	public void setRadi(int radi) {
+		this.radi = radi;
+	}
+
+	public Punt getCentre() {
+		return centre;
+	}
+
+	public void setCentre(Punt centre) {
+		this.centre = centre;
+	}
+
 }
