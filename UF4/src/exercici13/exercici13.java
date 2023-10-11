@@ -1,8 +1,8 @@
-package exercici_13;
+package exercici13;
 
 import java.util.Scanner;
 
-public class Exercici_13 {
+public class exercici13 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
