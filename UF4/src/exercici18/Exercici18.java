@@ -5,10 +5,14 @@ import java.util.Scanner;
 public class Exercici18 {
 
 	public static void main(String[] args) {
+		System.out.println("Escriure una frase:");
 		Scanner scanner = new Scanner(System.in);
-		String text = "";
+		
+		String text = scanner.nextLine();
+		
+		int opcio = 0;
 
-		while (true) {
+		while (opcio!=4) { 
 			System.out.println("Menú:");
 			System.out.println("1. Mostrar la longitud del text");
 			System.out.println("2. Entrar un altre text i indicar si són iguals");
@@ -16,7 +20,7 @@ public class Exercici18 {
 			System.out.println("4. Sortir");
 			System.out.print("Selecciona una opció: ");
 
-			int opcio = scanner.nextInt();
+			opcio = scanner.nextInt();
 
 			switch (opcio) {
 			case 1:
@@ -39,7 +43,6 @@ public class Exercici18 {
 			case 4:
 				System.out.println("Fins aviat!");
 				scanner.close();
-				System.exit(0);
 				break;
 			default:
 				System.out.println("Opció no vàlida. Torna a intentar.");

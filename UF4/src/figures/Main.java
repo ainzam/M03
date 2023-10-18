@@ -1,5 +1,8 @@
 package figures;
 
+import figures.interfaces.Cercle;
+import figures.interfaces.Quadrat;
+
 public class Main {
 
 	public static void main(String[] args) {

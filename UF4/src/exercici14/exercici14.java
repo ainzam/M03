@@ -5,7 +5,7 @@ public class exercici14 {
 		int[] vectorEnters = { 1, 2, 3, 4, 5 }; // Exemple de vector d'enters
 
 		// Crèiem un vector de Strings a partir del vector d'enters
-		String[] vectorStrings = convertirVectorEntersAStrings(vectorEnters);
+		String[] vectorStrings  = convertirVectorEntersAStrings(vectorEnters);
 
 		// Mostrem el vector de Strings
 		for (String s : vectorStrings) {
