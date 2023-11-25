@@ -3,6 +3,8 @@ package m3.uf4.pt1.fitxers;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class Fitxer extends ElementSistema {
 
 	private int mida;
@@ -24,6 +26,19 @@ public class Fitxer extends ElementSistema {
 
 	public String imprimir(char unitats) {
 	    String sizeFormatted = SistemaFitxers.formatSize(unitats, mida);
-	    return String.format("%d %s %s %s", id, sizeFormatted, new SimpleDateFormat("yyyy-MM-dd HH:mm").format(creat), getPath());
+	    String dateFormatted = new SimpleDateFormat("yyyy-MM-dd HH:mm").format(creat);
+	    
+	    String idStr = String.valueOf(id);
+	    
+	    String gap = StringUtils.leftPad("",AMPLE_GAP);
+	    String formattedId = StringUtils.leftPad(idStr, AMPLE_IDENT).replace(' ', '.');
+	    String formattedType = "F";
+	    String formattedDate = StringUtils.leftPad(dateFormatted, AMPLE_DATA);
+	    String formattedSize = StringUtils.leftPad(sizeFormatted, AMPLE_MIDA);
+	    String formattedNom = StringUtils.leftPad(nom, AMPLE_NOM);
+	    
+
+	    return String.format("%s%s%s%s%s%s%s%s", formattedId, formattedType,gap, formattedDate,gap , formattedSize ,gap , formattedNom);
+
 	}
 }

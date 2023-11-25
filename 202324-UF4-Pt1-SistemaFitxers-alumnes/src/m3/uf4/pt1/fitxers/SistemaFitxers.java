@@ -20,13 +20,13 @@ public class SistemaFitxers implements Imprimible {
 		// Implementa la lógica para formatear el tamaño según las unidades
 		switch (unitats) {
 		case 'B':
-			return String.format("%d Bytes", mida);
+			return String.format("%d B", mida);
 		case 'K':
-			return String.format("%.2f KB", mida / 1024.0);
+			return String.format("%.1f KB", mida / 1024.0);
 		case 'M':
-			return String.format("%.2f MB", mida / 1048576.0);
+			return String.format("%.1f MB", mida / 1048576.0);
 		case 'G':
-			return String.format("%.2f GB", mida / 1073741824.0);
+			return String.format("%.1f GB", mida / 1073741824.0);
 		default:
 			return "Unidad no válida";
 		}

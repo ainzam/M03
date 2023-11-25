@@ -6,6 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/cfgs/Escriptori/commons-lang3-3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/andre/Downloads/commons-lang3-3.0.jar/commons-lang3-3.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

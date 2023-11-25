@@ -10,19 +10,37 @@ public abstract class ElementSistema implements Imprimible {
 	protected Directori parent;
 
 	public ElementSistema(String nom) {
-		this.nom = (nom != null) ? nom : "";
+		if(nom != null) {
+			this.nom = nom;
+		}else {
+			this.nom = "";
+		}
 		this.creat = new Date();
 		this.id = currentId++;
 	}
 
 	public ElementSistema(String nom, Date creat) {
-		this.nom = (nom != null) ? nom : "";
-		this.creat = (creat != null) ? creat : new Date();
+		if(nom != null) {
+			this.nom = nom;
+		}else {
+			this.nom = "";
+		}
+		if(creat != null) {
+			this.creat = creat;
+		}else {
+			this.creat = new Date();
+		}
 		this.id = currentId++;
 	}
 
 	public int getDepth() {
-		return (parent != null) ? parent.getDepth() + 1 : 0;
+		int depth;
+		if(parent != null) {
+			depth = parent.getDepth() + 1;
+			return depth;
+		}else {
+			return 0;
+		}
 	}
 
 	public String getPath() {

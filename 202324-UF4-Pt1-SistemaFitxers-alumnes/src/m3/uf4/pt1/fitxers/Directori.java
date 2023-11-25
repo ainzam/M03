@@ -1,6 +1,9 @@
 package m3.uf4.pt1.fitxers;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import org.apache.commons.lang3.StringUtils;
 
 public class Directori extends ElementSistema {
 
@@ -97,19 +100,27 @@ public class Directori extends ElementSistema {
 		return totalMida + countElements() * MIDA_REFERENCIA;
 	}
 
-	public String imprimir(char unitats) {
-		StringBuilder result = new StringBuilder();
-		result.append(String.format("%s %s %s", getDepth(), nom, getPath()));
-		result.append(System.lineSeparator());
+    @Override
+    public String imprimir(char unitats) {
+        String result = "";
 
-		for (ElementSistema element : elements) {
-			if (element != null) {
-				result.append(" ".repeat(MIDA_REFERENCIA * getDepth()));
-				result.append(element.imprimir(unitats));
-				result.append(System.lineSeparator());
-			}
-		}
+        // Imprime la línea con las datos del directorio
+        result += String.format("%d D %s %s %s%n", getId(),
+                SistemaFitxers.formatSize(unitats, getMida()),
+                new SimpleDateFormat("yyyy-MM-dd HH:mm").format(creat), getPath());
 
-		return result.toString();
-	}
+        // Imprime una línea en blanco
+        result += System.lineSeparator();
+
+        // Imprime cada elemento identado según la profundidad
+        for (ElementSistema element : elements) {
+            if (element != null) {
+                result += StringUtils.repeat('.', AMPLE_IDENT * getDepth());
+                result += element.imprimir(unitats);
+                result += System.lineSeparator();
+            }
+        }
+
+        return result;
+    }
 }
