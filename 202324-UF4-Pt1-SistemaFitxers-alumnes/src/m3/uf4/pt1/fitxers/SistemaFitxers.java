@@ -22,11 +22,11 @@ public class SistemaFitxers implements Imprimible {
 		case 'B':
 			return String.format("%d B", mida);
 		case 'K':
-			return String.format("%.1f KB", mida / 1024.0);
+			return String.format("%d KB", mida / 1024);
 		case 'M':
-			return String.format("%.1f MB", mida / 1048576.0);
+			return String.format("%d MB", mida / 1024 / 1024);
 		case 'G':
-			return String.format("%.1f GB", mida / 1073741824.0);
+			return String.format("%d GB", mida / 1024 / 1024 / 1024);
 		default:
 			return "Unidad no válida";
 		}

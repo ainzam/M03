@@ -8,7 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 public class Directori extends ElementSistema {
 
 	public static final int MAX_ELEMENTS = 10;
-	public static final int MIDA_REFERENCIA = 10;
+	public static final int MIDA_REFERENCIA = 4;
 	private ElementSistema[] elements;
 
 	public Directori(String nom) {
@@ -105,9 +105,14 @@ public class Directori extends ElementSistema {
         String result = "";
 
         // Imprime la línea con las datos del directorio
-        result += String.format("%d D %s %s %s%n", getId(),
-                SistemaFitxers.formatSize(unitats, getMida()),
-                new SimpleDateFormat("yyyy-MM-dd HH:mm").format(creat), getPath());
+        result += String.format("%sD%s%s%s%s%s%s%n",
+        		StringUtils.leftPad(String.valueOf(getId()),AMPLE_IDENT).replace(' ', '.'),
+                StringUtils.leftPad("",AMPLE_GAP),
+                StringUtils.leftPad(new SimpleDateFormat("yyyy-MM-dd HH:mm").format(creat), AMPLE_DATA),
+                StringUtils.leftPad("",AMPLE_GAP),
+                StringUtils.rightPad(SistemaFitxers.formatSize(unitats, getMida()),AMPLE_MIDA),
+                StringUtils.leftPad("",AMPLE_GAP),
+                StringUtils.rightPad(nom,AMPLE_NOM));
 
         // Imprime una línea en blanco
         result += System.lineSeparator();

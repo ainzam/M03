@@ -27,6 +27,11 @@ public class Fitxer extends ElementSistema {
 	public String imprimir(char unitats) {
 	    String sizeFormatted = SistemaFitxers.formatSize(unitats, mida);
 	    String dateFormatted = new SimpleDateFormat("yyyy-MM-dd HH:mm").format(creat);
+	    String trimmedNom = StringUtils.substring(nom, 0, AMPLE_NOM - 3);
+	    
+	    if (nom.length() > AMPLE_NOM) {
+	        trimmedNom += "...";
+	    }
 	    
 	    String idStr = String.valueOf(id);
 	    
@@ -34,8 +39,8 @@ public class Fitxer extends ElementSistema {
 	    String formattedId = StringUtils.leftPad(idStr, AMPLE_IDENT).replace(' ', '.');
 	    String formattedType = "F";
 	    String formattedDate = StringUtils.leftPad(dateFormatted, AMPLE_DATA);
-	    String formattedSize = StringUtils.leftPad(sizeFormatted, AMPLE_MIDA);
-	    String formattedNom = StringUtils.leftPad(nom, AMPLE_NOM);
+	    String formattedSize = StringUtils.rightPad(sizeFormatted, AMPLE_MIDA);
+	    String formattedNom = StringUtils.rightPad(trimmedNom, AMPLE_NOM);
 	    
 
 	    return String.format("%s%s%s%s%s%s%s%s", formattedId, formattedType,gap, formattedDate,gap , formattedSize ,gap , formattedNom);
