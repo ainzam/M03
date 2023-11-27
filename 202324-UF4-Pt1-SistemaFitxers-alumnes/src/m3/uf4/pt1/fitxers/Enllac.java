@@ -29,7 +29,7 @@ public class Enllac extends ElementSistema {
         String idStr = String.valueOf(id);
         
         
-        String formattedId = StringUtils.leftPad(idStr, AMPLE_IDENT);
+        String formattedId = StringUtils.leftPad(idStr, AMPLE_IDENT * getDepth()).replace(" ", ".");
         String formattedType = "L";
         String formattedDate = StringUtils.leftPad(dateFormatted, AMPLE_DATA);
         String formattedNom = StringUtils.center(nom, AMPLE_NOM);

@@ -36,7 +36,7 @@ public class Fitxer extends ElementSistema {
 	    String idStr = String.valueOf(id);
 	    
 	    String gap = StringUtils.leftPad("",AMPLE_GAP);
-	    String formattedId = StringUtils.leftPad(idStr, AMPLE_IDENT).replace(' ', '.');
+	    String formattedId = StringUtils.leftPad(idStr, AMPLE_IDENT * getDepth()).replace(' ', '.');
 	    String formattedType = "F";
 	    String formattedDate = StringUtils.leftPad(dateFormatted, AMPLE_DATA);
 	    String formattedSize = StringUtils.rightPad(sizeFormatted, AMPLE_MIDA);

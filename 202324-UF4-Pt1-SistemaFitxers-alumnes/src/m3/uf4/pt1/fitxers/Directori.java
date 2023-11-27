@@ -106,7 +106,7 @@ public class Directori extends ElementSistema {
 
         // Imprime la línea con las datos del directorio
         result += String.format("%sD%s%s%s%s%s%s%n",
-        		StringUtils.leftPad(String.valueOf(getId()),AMPLE_IDENT).replace(' ', '.'),
+        		StringUtils.leftPad(String.valueOf(getId()),AMPLE_IDENT * getDepth()).replace(' ', '.'),
                 StringUtils.leftPad("",AMPLE_GAP),
                 StringUtils.leftPad(new SimpleDateFormat("yyyy-MM-dd HH:mm").format(creat), AMPLE_DATA),
                 StringUtils.leftPad("",AMPLE_GAP),
@@ -120,7 +120,6 @@ public class Directori extends ElementSistema {
         // Imprime cada elemento identado según la profundidad
         for (ElementSistema element : elements) {
             if (element != null) {
-                result += StringUtils.repeat('.', AMPLE_IDENT * getDepth());
                 result += element.imprimir(unitats);
                 result += System.lineSeparator();
             }
