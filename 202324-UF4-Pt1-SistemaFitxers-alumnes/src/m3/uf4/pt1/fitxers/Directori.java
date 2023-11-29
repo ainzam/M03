@@ -100,31 +100,30 @@ public class Directori extends ElementSistema {
 		return totalMida + countElements() * MIDA_REFERENCIA;
 	}
 
-    @Override
-    public String imprimir(char unitats) {
-        String result = "";
+	@Override
+	public String imprimir(char unitats) {
+		String result = "";
 
-        // Imprime la línea con las datos del directorio
-        result += String.format("%sD%s%s%s%s%s%s%n",
-        		StringUtils.leftPad(String.valueOf(getId()),AMPLE_IDENT * getDepth()).replace(' ', '.'),
-                StringUtils.leftPad("",AMPLE_GAP),
-                StringUtils.leftPad(new SimpleDateFormat("yyyy-MM-dd HH:mm").format(creat), AMPLE_DATA),
-                StringUtils.leftPad("",AMPLE_GAP),
-                StringUtils.rightPad(SistemaFitxers.formatSize(unitats, getMida()),AMPLE_MIDA),
-                StringUtils.leftPad("",AMPLE_GAP),
-                StringUtils.rightPad(nom,AMPLE_NOM));
+		// Imprime la línea con las datos del directorio
+		result += String.format("%s D%s%s%s%s%s%s%n",
+				StringUtils.leftPad(String.valueOf(getId()), AMPLE_IDENT * getDepth()).replace(' ', '.'),
+				StringUtils.leftPad("", AMPLE_GAP),
+				StringUtils.leftPad(new SimpleDateFormat("yyyy-MM-dd HH:mm").format(creat), AMPLE_DATA),
+				StringUtils.leftPad("", AMPLE_GAP),
+				StringUtils.rightPad(SistemaFitxers.formatSize(unitats, getMida()), AMPLE_MIDA),
+				StringUtils.leftPad("", AMPLE_GAP), StringUtils.rightPad(nom, AMPLE_NOM));
 
-        // Imprime una línea en blanco
-        result += System.lineSeparator();
+		// Imprime una línea en blanco
+		result += System.lineSeparator();
 
-        // Imprime cada elemento identado según la profundidad
-        for (ElementSistema element : elements) {
-            if (element != null) {
-                result += element.imprimir(unitats);
-                result += System.lineSeparator();
-            }
-        }
+		// Imprime cada elemento identado según la profundidad
+		for (ElementSistema element : elements) {
+			if (element != null) {
+				result += element.imprimir(unitats);
+				result += System.lineSeparator();
+			}
+		}
 
-        return result;
-    }
+		return result;
+	}
 }
