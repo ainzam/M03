@@ -1,27 +1,27 @@
 package Exercici7;
 
-public class Bitllet {
-	int importBitllet;
-	String color;
+public abstract class Bitllet implements Comparable<Bitllet> {
 
-	public Bitllet(int importBitllet, String color) {
-		this.importBitllet = importBitllet;
+	protected int importe;
+	protected String color;
+
+	public Bitllet(int importe, String color) {
+		this.importe = importe;
 		this.color = color;
 	}
 
-	public int getImportBitllet() {
-		return importBitllet;
-	}
+	public abstract boolean esDeCinc();
 
-	public void setImportBitllet(int importBitllet) {
-		this.importBitllet = importBitllet;
-	}
+	public abstract boolean esDeDeu();
+
+	public abstract boolean esDeVint();
 
 	public String getColor() {
 		return color;
 	}
 
-	public void setColor(String color) {
-		this.color = color;
+	@Override
+	public int compareTo(Bitllet other) {
+		return Integer.compare(other.importe, this.importe); // Ordenar de major a menor
 	}
 }
