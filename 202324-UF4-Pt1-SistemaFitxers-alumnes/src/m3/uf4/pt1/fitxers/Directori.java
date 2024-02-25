@@ -68,23 +68,22 @@ public class Directori extends ElementSistema {
 
 	@Override
 	public int getDepth() {
-		// Si el directorio actual es la raíz, su profundidad es 0.
+
 		if (isRoot()) {
 			return 0;
 		} else {
-			// Si no es la raíz, la profundidad es la profundidad del padre más 1.
+
 			return parent.getDepth() + 1;
 		}
 	}
 
 	@Override
 	public String getPath() {
-		// Si el directorio actual es la raíz, su ruta es una cadena vacía.
+
 		if (isRoot()) {
 			return "";
 		} else {
-			// Si no es la raíz, la ruta es la ruta del padre más el nombre del directorio
-			// actual.
+
 			return parent.getPath() + "/" + nom;
 		}
 	}
@@ -104,7 +103,7 @@ public class Directori extends ElementSistema {
 	public String imprimir(char unitats) {
 		String result = "";
 
-		// Imprime la línea con las datos del directorio
+
 		result += String.format("%s D%s%s%s%s%s%s%n",
 				StringUtils.leftPad(String.valueOf(getId()), AMPLE_IDENT * getDepth()).replace(' ', '.'),
 				StringUtils.leftPad("", AMPLE_GAP),
@@ -113,10 +112,10 @@ public class Directori extends ElementSistema {
 				StringUtils.rightPad(SistemaFitxers.formatSize(unitats, getMida()), AMPLE_MIDA),
 				StringUtils.leftPad("", AMPLE_GAP), StringUtils.rightPad(nom, AMPLE_NOM));
 
-		// Imprime una línea en blanco
+
 		result += System.lineSeparator();
 
-		// Imprime cada elemento identado según la profundidad
+
 		for (ElementSistema element : elements) {
 			if (element != null) {
 				result += element.imprimir(unitats);
