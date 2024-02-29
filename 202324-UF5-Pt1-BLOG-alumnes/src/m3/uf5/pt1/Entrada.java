@@ -2,6 +2,8 @@ package m3.uf5.pt1;
 
 import java.util.Stack;
 
+import org.apache.commons.text.WordUtils;
+
 public class Entrada extends Publicacio {
 
 	public static final String SEPARADOR = "|";
@@ -51,8 +53,20 @@ public class Entrada extends Publicacio {
 
 	@Override
 	public String imprimirPublicacio(String ident, int width) {
-		// TODO
-		return null;
+	    StringBuilder sb = new StringBuilder();
+	    sb.append(ident).append(getData()).append(" | ").append(usuario.getNick()).append("\n");
+	    sb.append(ident).append(SEPARADOR.repeat(width / 2)).append("\n");
+	    String[] lines = WordUtils.wrap(getTitol(), width).split(System.lineSeparator());
+	    for (String line : lines) {
+	        sb.append(ident).append(line).append("\n");
+	    }
+	    for (Comentari comentari : comentaris) {
+	        sb.append(comentari.imprimirPublicacio(ident + "  ", width)).append("\n");
+	    }
+	    sb.append(ident).append(SEPARADOR.repeat(width / 2)).append("\n");
+	    sb.append(ident).append("Mitjana de valoracions: ").append(valoracioMitjaEntrada()).append("\n");
+	    return sb.toString();
 	}
+
 
 }

@@ -17,6 +17,14 @@ public abstract class Publicacio {
 		usuari.afegirPublicacio(this);
 	}
 
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
 	public String getText() {
 		return text;
 	}

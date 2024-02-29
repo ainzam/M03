@@ -28,9 +28,10 @@ public class Comentari extends Publicacio {
 
 	@Override
 	public String imprimirPublicacio(String ident, int width) {
-
-		return null;
-
+	    StringBuilder sb = new StringBuilder();
+	    sb.append(ident).append(getText()).append("\n");
+	    sb.append(ident).append("Valoració: ").append(Comentari.getTextValoracio(getValoracio())).append("\n");
+	    return sb.toString();
 	}
 
 	public static boolean containsValoracio(int key) {
