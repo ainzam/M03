@@ -1,8 +1,12 @@
 package m3.uf5.pt1;
 
+import java.text.SimpleDateFormat;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.text.WordUtils;
 
 public class Comentari extends Publicacio {
 
@@ -28,12 +32,33 @@ public class Comentari extends Publicacio {
 
 	@Override
 	public String imprimirPublicacio(String ident, int width) {
+	    String comentario = String.format("%s.- \"%s\"", getUsuario().getNick(), getText());
+
+	    String[] lineas = WordUtils.wrap(comentario, width).split(System.lineSeparator());
+
 	    StringBuilder sb = new StringBuilder();
-	    sb.append(ident).append(getText()).append("\n");
-	    sb.append(ident).append("Valoració: ").append(Comentari.getTextValoracio(getValoracio())).append("\n");
+	    for (String linea : lineas) {
+	        String totalCom = StringUtils.leftPad(linea, width + Blog.GAP);
+	        sb.append(StringUtils.repeat(" ", Blog.AMPLE_LEFT) + Entrada.SEPARADOR + totalCom).append("\n");
+	    }
+	    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+	    String fechaFormateada = dateFormat.format(getData());
+
+	    String valoracion = String.format("%s, valoració: %s", fechaFormateada, getTextValoracio(getValoracio()));
+
+	    String valoracionAlineada = StringUtils.leftPad(valoracion, width + Blog.GAP);
+	    
+	    sb.append(StringUtils.repeat(" ", Blog.AMPLE_LEFT) + Entrada.SEPARADOR + valoracionAlineada).append("\n");
+	    
+	    String separador = StringUtils.repeat(" ", Blog.AMPLE_LEFT) + Entrada.SEPARADOR + StringUtils.leftPad(StringUtils.repeat("-", 5), width + Blog.GAP);
+	    sb.append(separador).append("\n");
+
 	    return sb.toString();
 	}
 
+
+
+    
 	public static boolean containsValoracio(int key) {
 		return valoracions.containsKey(key);
 	}

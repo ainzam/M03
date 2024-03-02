@@ -4,6 +4,14 @@ import java.util.Date;
 
 public abstract class Publicacio {
 
+	public Usuari getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuari usuario) {
+		this.usuario = usuario;
+	}
+
 	protected Usuari usuario;
 	protected String text;
 

@@ -1,16 +1,17 @@
 package m3.uf5.pt1;
 
 import java.util.LinkedList;
+import java.util.Queue; // Importar Queue en lugar de List
 import java.util.Objects;
 
-public class Usuari {
+public class Usuari implements Comparable<Usuari>{
     
     public static final int JUNIOR_LIMIT = 2;
     public static final int SENIOR_LIMIT = 5;
     
     private String nick;
     private String mail;
-    public LinkedList<Publicacio> publicacions;
+    public Queue<Publicacio> publicacions;
 
     public Usuari(String nick, String mail) {
         this.nick = nick;
@@ -36,7 +37,7 @@ public class Usuari {
     
     public void afegirPublicacio(Publicacio publicacio) {
         if (publicacio != null) {
-            publicacions.add(publicacio);
+            publicacions.offer(publicacio);
         }
     }
     
@@ -49,6 +50,11 @@ public class Usuari {
         } else {
             return "Màster";
         }
+    }
+    
+    @Override
+    public int compareTo(Usuari other) {
+        return this.mail.compareTo(other.mail);
     }
 
 	@Override
