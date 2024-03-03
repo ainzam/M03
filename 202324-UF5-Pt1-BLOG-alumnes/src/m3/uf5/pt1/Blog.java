@@ -96,7 +96,6 @@ public class Blog {
     public String imprimirBlog() {
         StringBuilder sb = new StringBuilder();
 
-        // Cabecera
         String header = String.format("BLOG UF5 - PE1 (%d usuaris/es, %d entrades)", usuaris.size(), entrades.size());
         int totalWidth = AMPLE_LEFT + GAP + AMPLE_CONTENT;
         int headerWidth = header.length();
