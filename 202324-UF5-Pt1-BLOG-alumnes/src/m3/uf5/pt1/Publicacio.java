@@ -17,13 +17,21 @@ public abstract class Publicacio {
 
 	protected Date data;
 
-	public Publicacio(Usuari usuari, String text) {
-		this.usuario = usuari;
-		this.text = text;
-		this.data = new Date();
+    public Publicacio(Usuari usuari, String text) {
+        try {
+            if (usuari == null || text == null || text.isEmpty()) {
+                throw new Exception("El usuario o el texto no pueden ser nulos o vacíos.");
+            }
 
-		usuari.afegirPublicacio(this);
-	}
+            this.usuario = usuari;
+            this.text = text;
+            this.data = new Date();
+
+            usuari.afegirPublicacio(this);
+        } catch (Exception e) {
+            System.out.println("Error al crear una nueva publicación: " + e.getMessage());
+        }
+    }
 
 	public Date getData() {
 		return data;

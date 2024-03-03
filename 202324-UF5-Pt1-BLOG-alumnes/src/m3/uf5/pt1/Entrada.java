@@ -1,6 +1,6 @@
 package m3.uf5.pt1;
 
-import java.text.SimpleDateFormat;
+import java.util.Iterator;
 import java.util.Objects;
 import java.util.Stack;
 
@@ -17,7 +17,7 @@ public class Entrada extends Publicacio implements Comparable<Entrada>{
 	public Entrada(Usuari usuari, String titol, String text) {
 		super(usuari, text);
 		this.titol = titol;
-		this.comentaris = new Stack();
+		this.comentaris = new Stack<>();
 	}
 
 	public void afegirComentari(Usuari usuari, String text, int valoracio) {
@@ -26,24 +26,30 @@ public class Entrada extends Publicacio implements Comparable<Entrada>{
 	}
 
 	public String valoracioMitjaEntrada() {
+	    if (comentaris.isEmpty()) {
+	        return NOT_PROVIDED;
+	    }
 
-		double sumaValoracions = 0;
-		for (Comentari comentari : comentaris) {
-			sumaValoracions += comentari.getValoracio();
-		}
-		double mitjaValoracio = sumaValoracions / comentaris.size();
-		return String.format("%.1f", mitjaValoracio);
+	    double sumaValoracions = 0;
+	    Iterator<Comentari> iterator = comentaris.iterator();
+	    while (iterator.hasNext()) {
+	        sumaValoracions += iterator.next().getValoracio();
+	    }
 
+	    double mitjaValoracio = sumaValoracions / comentaris.size();
+	    return String.format("%.1f", mitjaValoracio);
 	}
 
 	public int totalValoracionsPerValor(int valor) {
-		int totalValoracions = 0;
-		for (Comentari comentari : comentaris) {
-			if (comentari.getValoracio() == valor) {
-				totalValoracions++;
-			}
-		}
-		return totalValoracions;
+	    int totalValoracions = 0;
+	    Iterator<Comentari> iterator = comentaris.iterator();
+	    while (iterator.hasNext()) {
+	        Comentari comentari = iterator.next();
+	        if (comentari.getValoracio() == valor) {
+	            totalValoracions++;
+	        }
+	    }
+	    return totalValoracions;
 	}
 
 	public String getTitol() {
@@ -69,16 +75,9 @@ public class Entrada extends Publicacio implements Comparable<Entrada>{
 	    for (String linea : lineasTexto) {
 	        sb.append(linea).append("\n");
 	    }
-
-
-
 	    return sb.toString();
 	}
 
-	private String getDataFormatada() {
-	    SimpleDateFormat dateFormat = new SimpleDateFormat("MMM yyyy");
-	    return dateFormat.format(getData()).toUpperCase();
-	}
 
     @Override
     public int compareTo(Entrada otraEntrada) {

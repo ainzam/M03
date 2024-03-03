@@ -2,6 +2,7 @@ package m3.uf5.pt1;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -24,29 +25,54 @@ public class Blog {
 
 
     public void nouUsuari(String mail, String nick) {
-        for (Usuari usuari : usuaris) {
-            if (usuari.getMail().equals(mail) || usuari.getNick().equals(nick)) {
-                throw new IllegalArgumentException("Ja existeix un usuari amb aquest mateix mail o nick.");
+        try {
+            if (mail == null || nick == null || mail.isEmpty() || nick.isEmpty()) {
+                throw new Exception("Mail o nick no pueden ser nulos o vacíos.");
             }
+
+            Iterator<Usuari> usuariIterator = usuaris.iterator();
+            while (usuariIterator.hasNext()) {
+                Usuari usuari = usuariIterator.next();
+                if (usuari.getMail().equals(mail) || usuari.getNick().equals(nick)) {
+                    throw new Exception("Ya existe un usuario con este mismo mail o nick.");
+                }
+            }
+
+            Usuari nouUsuari = new Usuari(nick, mail);
+            usuaris.add(nouUsuari);
+        } catch (Exception e) {
+        	System.err.println("Error al crear un nuevo usuario: " + e.getMessage());
         }
-        Usuari nouUsuari = new Usuari(nick, mail);
-        usuaris.add(nouUsuari);
     }
 
     public void afegirEntrada(String mail, String titol, String text) {
-        Usuari usuari = cercarUsuariPerMail(mail);
-        if (usuari != null) {
-            for (Entrada entrada : entrades) {
-                if (entrada.getUsuario().equals(usuari) && entrada.getTitol().equals(titol)) {
-                    throw new IllegalArgumentException("Ja existeix una entrada amb aquest mateix títol per a aquest usuari.");
-                }
+        try {
+            if (titol == null || titol.isEmpty()) {
+                throw new Exception("El título no puede ser nulo o vacío.");
             }
-            Entrada novaEntrada = new Entrada(usuari, titol, text);
-            entrades.add(novaEntrada);
-        } else {
-            throw new IllegalArgumentException("Usuari no trobat.");
+
+            Usuari usuari = cercarUsuariPerMail(mail);
+            if (usuari != null) {
+                for (Entrada entrada : entrades) {
+                    if (entrada.getUsuario().equals(usuari) && entrada.getTitol().equals(titol)) {
+                        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                        String fechaEntrada = dateFormat.format(entrada.getData());
+                        String fechaActual = dateFormat.format(new Date());
+                        if (fechaEntrada.equals(fechaActual)) {
+                            throw new Exception("Ya existe una entrada con este mismo título para este usuario en el mismo día.");
+                        }
+                    }
+                }
+                Entrada novaEntrada = new Entrada(usuari, titol, text);
+                entrades.add(novaEntrada);
+            } else {
+                throw new Exception("Usuario no encontrado.");
+            }
+        } catch (Exception e) {
+            System.err.println("Error al agregar una nueva entrada: " + e.getMessage());
         }
     }
+
 
 
     public void comentarEntrada(String mail, Date data, String titol, String text, int valoracio) {
@@ -130,14 +156,16 @@ public class Blog {
 		// TODO Auto-generated method stub
 	}
 	
-    public Entrada cercarEntradaPerDataTitol(Date data, String titol) {
-        for (Entrada entrada : entrades) {
-            if (entrada.getTitol().equals(titol)) {
-                return entrada;
-            }
-        }
-        return null;
-    }
+	public Entrada cercarEntradaPerDataTitol(Date data, String titol) {
+	    Iterator<Entrada> entradaIterator = entrades.iterator();
+	    while (entradaIterator.hasNext()) {
+	        Entrada entrada = entradaIterator.next();
+	        if (entrada.getTitol().equals(titol)) {
+	            return entrada;
+	        }
+	    }
+	    return null;
+	}
 	
     public Set<Entrada> getEntrades() {
 		return entrades;
@@ -160,22 +188,26 @@ public class Blog {
 
 
 	public Usuari cercarUsuariPerMail(String mail) {
-        for (Usuari usuari : usuaris) {
-            if (usuari.getMail().equals(mail)) {
-                return usuari;
-            }
-        }
-        return null; 
-    }
+	    Iterator<Usuari> usuariIterator = usuaris.iterator();
+	    while (usuariIterator.hasNext()) {
+	        Usuari usuari = usuariIterator.next();
+	        if (usuari.getMail().equals(mail)) {
+	            return usuari;
+	        }
+	    }
+	    return null;
+	}
 	
-    public Usuari cercarUsuariPerNick(String nick) {
-        for (Usuari usuari : usuaris) {
-            if (usuari.getNick().equals(nick)) {
-                return usuari;
-            }
-        }
-        return null; 
-    }	
+	public Usuari cercarUsuariPerNick(String nick) {
+	    Iterator<Usuari> usuariIterator = usuaris.iterator();
+	    while (usuariIterator.hasNext()) {
+	        Usuari usuari = usuariIterator.next();
+	        if (usuari.getNick().equals(nick)) {
+	            return usuari;
+	        }
+	    }
+	    return null;
+	}
 	
 
 }
