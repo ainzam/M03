@@ -1,5 +1,6 @@
 package m3.uf5.pt1;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Map;
 import java.util.Set;
@@ -8,8 +9,12 @@ import java.util.TreeMap;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.WordUtils;
 
-public class Comentari extends Publicacio {
+public class Comentari extends Publicacio implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3L;
 	public static final int IDENT_COMMENT = 5;
 	public static final int IDENT_INC = 2;
 	private static Map<Integer, String> valoracions = new TreeMap<>();

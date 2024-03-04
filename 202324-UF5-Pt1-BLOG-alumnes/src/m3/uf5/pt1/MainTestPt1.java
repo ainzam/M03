@@ -56,6 +56,7 @@ public class MainTestPt1 {
 		blog.comentarEntrada("maria@marianao.lan", new Date(), "I Cicero", "laboriosam, nisi ut aliquid ex ea commodi consequatur?", 2);
 
 		//blog.carregarDadesBlog(BLOG_FILENAME);
+		
 		System.out.println(blog.imprimirBlog());
 
 		//System.out.println(blog.imprimirEntrada(new Date(), "Lorem ipsum infinitum"));

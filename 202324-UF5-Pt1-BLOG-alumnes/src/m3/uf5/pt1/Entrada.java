@@ -1,5 +1,6 @@
 package m3.uf5.pt1;
 
+import java.io.Serializable;
 import java.util.Iterator;
 import java.util.Objects;
 import java.util.Stack;
@@ -7,12 +8,20 @@ import java.util.Stack;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.WordUtils;
 
-public class Entrada extends Publicacio implements Comparable<Entrada>{
+public class Entrada extends Publicacio implements Comparable<Entrada>,Serializable  {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2L;
 	public static final String SEPARADOR = "|";
 	public static final String NOT_PROVIDED = "NA";
 	private String titol;
 	private Stack<Comentari> comentaris;
+	
+	public Entrada() {
+	    // Constructor sin argumentos
+	}
 
 	public Entrada(Usuari usuari, String titol, String text) {
 		super(usuari, text);

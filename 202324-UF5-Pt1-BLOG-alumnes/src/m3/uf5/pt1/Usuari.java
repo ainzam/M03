@@ -1,17 +1,26 @@
 package m3.uf5.pt1;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.Queue; // Importar Queue en lugar de List
 import java.util.Objects;
 
-public class Usuari implements Comparable<Usuari>{
+public class Usuari implements Comparable<Usuari>,Serializable {
     
-    public static final int JUNIOR_LIMIT = 2;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public static final int JUNIOR_LIMIT = 2;
     public static final int SENIOR_LIMIT = 5;
     
     private String nick;
     private String mail;
     public Queue<Publicacio> publicacions;
+    
+    public Usuari() {
+        // Constructor sin argumentos
+    }
 
     public Usuari(String nick, String mail) {
         this.nick = nick;

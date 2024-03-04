@@ -1,5 +1,13 @@
 package m3.uf5.pt1;
 
+import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
@@ -9,8 +17,12 @@ import java.util.TreeSet;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.WordUtils;
 
-public class Blog {
+public class Blog implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4L;
 	public static final int AMPLE_LEFT = 15;
     public static final int GAP = 3;
     public static final int AMPLE_CONTENT = 60;
@@ -147,13 +159,29 @@ public class Blog {
 
 
 	
-	public void desarDadesBlog(String fitxer) {
-		// TODO Auto-generated method stub
-	}
-	
-	public void carregarDadesBlog(String fitxer) {
-		// TODO Auto-generated method stub
-	}
+    public void desarDadesBlog(String fitxer) {
+        try (XMLEncoder encoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(fitxer)))) {
+            encoder.writeObject(usuaris);
+            encoder.writeObject(entrades);
+        } catch (IOException e) {
+            System.err.println("Error al guardar datos del blog en formato XML: " + e.getMessage());
+        }
+    }
+
+    public void carregarDadesBlog(String fitxer) {
+        try (XMLDecoder decoder = new XMLDecoder(new BufferedInputStream(new FileInputStream(fitxer)))) {
+            @SuppressWarnings("unchecked")
+			Set<Usuari> usuarios = (Set<Usuari>) decoder.readObject();
+            @SuppressWarnings("unchecked")
+			Set<Entrada> entradas = (Set<Entrada>) decoder.readObject();
+
+            this.usuaris = usuarios;
+            this.entrades = entradas;
+        } catch (IOException | ClassCastException e) {
+            System.err.println("Error al cargar datos del blog desde el archivo XML: " + e.getMessage());
+        }
+    }
+
 	
 	public Entrada cercarEntradaPerDataTitol(Date data, String titol) {
 	    Iterator<Entrada> entradaIterator = entrades.iterator();

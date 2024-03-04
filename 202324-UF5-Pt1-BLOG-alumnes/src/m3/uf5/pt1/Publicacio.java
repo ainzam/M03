@@ -4,18 +4,14 @@ import java.util.Date;
 
 public abstract class Publicacio {
 
-	public Usuari getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuari usuario) {
-		this.usuario = usuario;
-	}
-
 	protected Usuari usuario;
 	protected String text;
 
 	protected Date data;
+	
+    protected Publicacio() {
+        // Constructor sin argumentos
+    }
 
     public Publicacio(Usuari usuari, String text) {
         try {
@@ -33,6 +29,13 @@ public abstract class Publicacio {
         }
     }
 
+	public Usuari getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuari usuario) {
+		this.usuario = usuario;
+	}
 	public Date getData() {
 		return data;
 	}
