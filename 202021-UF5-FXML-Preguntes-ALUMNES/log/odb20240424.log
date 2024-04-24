@@ -1,0 +1,346 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-24 16:11:29 #1 store] 
+Database '/home/cfgs/git/M03/202021-UF5-FXML-Preguntes-ALUMNES/db/examen.odb' is opened by 7548@pc-info-host
+
+[2024-04-24 16:11:29 #2 store] 
+Configuration path: ?
+
+[2024-04-24 16:11:29 #3 type] 
+Type m3.uf5.preguntes.examen.model.Examen is not enhanced.
+
+[2024-04-24 16:11:29 #4 type] 
+Type m3.uf5.preguntes.examen.model.Estudiant is not enhanced.
+
+[2024-04-24 16:11:29 #5 type] 
+Type m3.uf5.preguntes.examen.model.Pregunta is not enhanced.
+
+[2024-04-24 16:11:29 #6 type] 
+Type m3.uf5.preguntes.examen.model.UnitatFormativa is not enhanced.
+
+[2024-04-24 16:11:29 #7 type] 
+Type m3.uf5.preguntes.examen.model.Lliurament is not enhanced.
+
+[2024-04-24 16:11:29 #8 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOberta is not enhanced.
+
+[2024-04-24 16:11:29 #9 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOpcions is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-24 16:40:21 #1 store] 
+Database '/home/cfgs/git/M03/202021-UF5-FXML-Preguntes-ALUMNES/db/examen.odb' is opened by 8759@pc-info-host
+
+[2024-04-24 16:40:21 #2 store] 
+Configuration path: ?
+
+[2024-04-24 16:40:21 #3 type] 
+Type m3.uf5.preguntes.examen.model.Examen is not enhanced.
+
+[2024-04-24 16:40:21 #4 type] 
+Type m3.uf5.preguntes.examen.model.Estudiant is not enhanced.
+
+[2024-04-24 16:40:21 #5 type] 
+Type m3.uf5.preguntes.examen.model.Pregunta is not enhanced.
+
+[2024-04-24 16:40:21 #6 type] 
+Type m3.uf5.preguntes.examen.model.UnitatFormativa is not enhanced.
+
+[2024-04-24 16:40:21 #7 type] 
+Type m3.uf5.preguntes.examen.model.Lliurament is not enhanced.
+
+[2024-04-24 16:40:21 #8 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOberta is not enhanced.
+
+[2024-04-24 16:40:21 #9 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOpcions is not enhanced.
+
+[2024-04-24 16:40:21 #10 store] 
+Database '/home/cfgs/git/M03/202021-UF5-FXML-Preguntes-ALUMNES/db/examen.odb' is closed by 8759@pc-info-host
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-24 16:42:53 #1 store] 
+Database '/home/cfgs/git/M03/202021-UF5-FXML-Preguntes-ALUMNES/db/examen.odb' is opened by 8865@pc-info-host
+
+[2024-04-24 16:42:53 #2 store] 
+Configuration path: ?
+
+[2024-04-24 16:42:53 #3 type] 
+Type m3.uf5.preguntes.examen.model.Examen is not enhanced.
+
+[2024-04-24 16:42:53 #4 type] 
+Type m3.uf5.preguntes.examen.model.Estudiant is not enhanced.
+
+[2024-04-24 16:42:53 #5 type] 
+Type m3.uf5.preguntes.examen.model.Pregunta is not enhanced.
+
+[2024-04-24 16:42:53 #6 type] 
+Type m3.uf5.preguntes.examen.model.UnitatFormativa is not enhanced.
+
+[2024-04-24 16:42:53 #7 type] 
+Type m3.uf5.preguntes.examen.model.Lliurament is not enhanced.
+
+[2024-04-24 16:42:53 #8 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOberta is not enhanced.
+
+[2024-04-24 16:42:53 #9 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOpcions is not enhanced.
+
+[2024-04-24 16:42:54 #10 store] 
+Database '/home/cfgs/git/M03/202021-UF5-FXML-Preguntes-ALUMNES/db/examen.odb' is closed by 8865@pc-info-host
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-24 16:47:55 #1 store] 
+Database '/home/cfgs/git/M03/202021-UF5-FXML-Preguntes-ALUMNES/db/examen.odb' is opened by 9065@pc-info-host
+
+[2024-04-24 16:47:55 #2 store] 
+Configuration path: ?
+
+[2024-04-24 16:47:55 #3 type] 
+Type m3.uf5.preguntes.examen.model.Examen is not enhanced.
+
+[2024-04-24 16:47:55 #4 type] 
+Type m3.uf5.preguntes.examen.model.Estudiant is not enhanced.
+
+[2024-04-24 16:47:55 #5 type] 
+Type m3.uf5.preguntes.examen.model.Pregunta is not enhanced.
+
+[2024-04-24 16:47:55 #6 type] 
+Type m3.uf5.preguntes.examen.model.UnitatFormativa is not enhanced.
+
+[2024-04-24 16:47:55 #7 type] 
+Type m3.uf5.preguntes.examen.model.Lliurament is not enhanced.
+
+[2024-04-24 16:47:55 #8 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOberta is not enhanced.
+
+[2024-04-24 16:47:55 #9 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOpcions is not enhanced.
+
+[2024-04-24 16:47:55 #10 store] 
+Database '/home/cfgs/git/M03/202021-UF5-FXML-Preguntes-ALUMNES/db/examen.odb' is closed by 9065@pc-info-host
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-24 16:48:46 #1 store] 
+Database '/home/cfgs/git/M03/202021-UF5-FXML-Preguntes-ALUMNES/db/examen.odb' is opened by 9123@pc-info-host
+
+[2024-04-24 16:48:46 #2 store] 
+Configuration path: ?
+
+[2024-04-24 16:48:46 #3 type] 
+Type m3.uf5.preguntes.examen.model.Examen is not enhanced.
+
+[2024-04-24 16:48:46 #4 type] 
+Type m3.uf5.preguntes.examen.model.Estudiant is not enhanced.
+
+[2024-04-24 16:48:46 #5 type] 
+Type m3.uf5.preguntes.examen.model.Pregunta is not enhanced.
+
+[2024-04-24 16:48:46 #6 type] 
+Type m3.uf5.preguntes.examen.model.UnitatFormativa is not enhanced.
+
+[2024-04-24 16:48:46 #7 type] 
+Type m3.uf5.preguntes.examen.model.Lliurament is not enhanced.
+
+[2024-04-24 16:48:46 #8 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOberta is not enhanced.
+
+[2024-04-24 16:48:46 #9 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOpcions is not enhanced.
+
+[2024-04-24 16:48:46 #10 store] 
+Database '/home/cfgs/git/M03/202021-UF5-FXML-Preguntes-ALUMNES/db/examen.odb' is closed by 9123@pc-info-host
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-24 16:49:20 #1 store] 
+Database '/home/cfgs/git/M03/202021-UF5-FXML-Preguntes-ALUMNES/db/examen.odb' is opened by 9165@pc-info-host
+
+[2024-04-24 16:49:20 #2 store] 
+Configuration path: ?
+
+[2024-04-24 16:49:21 #3 type] 
+Type m3.uf5.preguntes.examen.model.Examen is not enhanced.
+
+[2024-04-24 16:49:21 #4 type] 
+Type m3.uf5.preguntes.examen.model.Estudiant is not enhanced.
+
+[2024-04-24 16:49:21 #5 type] 
+Type m3.uf5.preguntes.examen.model.Pregunta is not enhanced.
+
+[2024-04-24 16:49:21 #6 type] 
+Type m3.uf5.preguntes.examen.model.UnitatFormativa is not enhanced.
+
+[2024-04-24 16:49:21 #7 type] 
+Type m3.uf5.preguntes.examen.model.Lliurament is not enhanced.
+
+[2024-04-24 16:49:21 #8 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOberta is not enhanced.
+
+[2024-04-24 16:49:21 #9 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOpcions is not enhanced.
+
+[2024-04-24 16:49:21 #10 store] 
+Database '/home/cfgs/git/M03/202021-UF5-FXML-Preguntes-ALUMNES/db/examen.odb' is closed by 9165@pc-info-host
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-24 16:49:41 #1 store] 
+Database '/home/cfgs/git/M03/202021-UF5-FXML-Preguntes-ALUMNES/db/examen.odb' is opened by 9197@pc-info-host
+
+[2024-04-24 16:49:41 #2 store] 
+Configuration path: ?
+
+[2024-04-24 16:49:41 #3 type] 
+Type m3.uf5.preguntes.examen.model.Examen is not enhanced.
+
+[2024-04-24 16:49:41 #4 type] 
+Type m3.uf5.preguntes.examen.model.Estudiant is not enhanced.
+
+[2024-04-24 16:49:41 #5 type] 
+Type m3.uf5.preguntes.examen.model.Pregunta is not enhanced.
+
+[2024-04-24 16:49:41 #6 type] 
+Type m3.uf5.preguntes.examen.model.UnitatFormativa is not enhanced.
+
+[2024-04-24 16:49:41 #7 type] 
+Type m3.uf5.preguntes.examen.model.Lliurament is not enhanced.
+
+[2024-04-24 16:49:41 #8 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOberta is not enhanced.
+
+[2024-04-24 16:49:41 #9 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOpcions is not enhanced.
+
+[2024-04-24 16:49:41 #10 store] 
+Database '/home/cfgs/git/M03/202021-UF5-FXML-Preguntes-ALUMNES/db/examen.odb' is closed by 9197@pc-info-host
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-24 16:53:44 #1 store] 
+Database '/home/cfgs/git/M03/202021-UF5-FXML-Preguntes-ALUMNES/db/examen.odb' is opened by 9377@pc-info-host
+
+[2024-04-24 16:53:44 #2 store] 
+Configuration path: ?
+
+[2024-04-24 16:53:44 #3 type] 
+Type m3.uf5.preguntes.examen.model.Examen is not enhanced.
+
+[2024-04-24 16:53:44 #4 type] 
+Type m3.uf5.preguntes.examen.model.Estudiant is not enhanced.
+
+[2024-04-24 16:53:44 #5 type] 
+Type m3.uf5.preguntes.examen.model.Pregunta is not enhanced.
+
+[2024-04-24 16:53:44 #6 type] 
+Type m3.uf5.preguntes.examen.model.UnitatFormativa is not enhanced.
+
+[2024-04-24 16:53:44 #7 type] 
+Type m3.uf5.preguntes.examen.model.Lliurament is not enhanced.
+
+[2024-04-24 16:53:44 #8 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOberta is not enhanced.
+
+[2024-04-24 16:53:44 #9 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOpcions is not enhanced.
+
+[2024-04-24 16:53:44 #10 store] 
+Database '/home/cfgs/git/M03/202021-UF5-FXML-Preguntes-ALUMNES/db/examen.odb' is closed by 9377@pc-info-host
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-24 16:54:31 #1 store] 
+Database '/home/cfgs/git/M03/202021-UF5-FXML-Preguntes-ALUMNES/db/examen.odb' is opened by 9438@pc-info-host
+
+[2024-04-24 16:54:31 #2 store] 
+Configuration path: ?
+
+[2024-04-24 16:54:31 #3 type] 
+Type m3.uf5.preguntes.examen.model.Examen is not enhanced.
+
+[2024-04-24 16:54:31 #4 type] 
+Type m3.uf5.preguntes.examen.model.Estudiant is not enhanced.
+
+[2024-04-24 16:54:31 #5 type] 
+Type m3.uf5.preguntes.examen.model.Pregunta is not enhanced.
+
+[2024-04-24 16:54:31 #6 type] 
+Type m3.uf5.preguntes.examen.model.UnitatFormativa is not enhanced.
+
+[2024-04-24 16:54:31 #7 type] 
+Type m3.uf5.preguntes.examen.model.Lliurament is not enhanced.
+
+[2024-04-24 16:54:31 #8 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOberta is not enhanced.
+
+[2024-04-24 16:54:31 #9 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOpcions is not enhanced.
+
+[2024-04-24 16:54:31 #10 store] 
+Database '/home/cfgs/git/M03/202021-UF5-FXML-Preguntes-ALUMNES/db/examen.odb' is closed by 9438@pc-info-host
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-24 16:58:55 #1 store] 
+Database '/home/cfgs/git/M03/202021-UF5-FXML-Preguntes-ALUMNES/db/examen.odb' is opened by 9637@pc-info-host
+
+[2024-04-24 16:58:55 #2 store] 
+Configuration path: ?
+
+[2024-04-24 16:58:55 #3 type] 
+Type m3.uf5.preguntes.examen.model.Examen is not enhanced.
+
+[2024-04-24 16:58:55 #4 type] 
+Type m3.uf5.preguntes.examen.model.Estudiant is not enhanced.
+
+[2024-04-24 16:58:55 #5 type] 
+Type m3.uf5.preguntes.examen.model.Pregunta is not enhanced.
+
+[2024-04-24 16:58:55 #6 type] 
+Type m3.uf5.preguntes.examen.model.UnitatFormativa is not enhanced.
+
+[2024-04-24 16:58:55 #7 type] 
+Type m3.uf5.preguntes.examen.model.Lliurament is not enhanced.
+
+[2024-04-24 16:58:55 #8 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOberta is not enhanced.
+
+[2024-04-24 16:58:55 #9 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOpcions is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-24 16:59:21 #1 store] 
+Database '/home/cfgs/git/M03/202021-UF5-FXML-Preguntes-ALUMNES/db/examen.odb' is opened by 9668@pc-info-host
+
+[2024-04-24 16:59:21 #2 store] 
+Configuration path: ?
+
+[2024-04-24 16:59:21 #3 type] 
+Type m3.uf5.preguntes.examen.model.Examen is not enhanced.
+
+[2024-04-24 16:59:21 #4 type] 
+Type m3.uf5.preguntes.examen.model.Estudiant is not enhanced.
+
+[2024-04-24 16:59:21 #5 type] 
+Type m3.uf5.preguntes.examen.model.Pregunta is not enhanced.
+
+[2024-04-24 16:59:21 #6 type] 
+Type m3.uf5.preguntes.examen.model.UnitatFormativa is not enhanced.
+
+[2024-04-24 16:59:21 #7 type] 
+Type m3.uf5.preguntes.examen.model.Lliurament is not enhanced.
+
+[2024-04-24 16:59:21 #8 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOberta is not enhanced.
+
+[2024-04-24 16:59:21 #9 type] 
+Type m3.uf5.preguntes.examen.model.PreguntaOpcions is not enhanced.
+
+[2024-04-24 16:59:21 #10 store] 
+Database '/home/cfgs/git/M03/202021-UF5-FXML-Preguntes-ALUMNES/db/examen.odb' is closed by 9668@pc-info-host
+

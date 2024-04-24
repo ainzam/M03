@@ -1,48 +1,93 @@
 package m3.uf5.preguntes.examen;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import m3.uf5.preguntes.examen.model.Excepcio;
+import m3.uf5.preguntes.examen.model.Pregunta;
 
 public class MainObjectDB {
 	public static final String ODB = "$objectdb/db/examen.odb";
 
 	public static void main(String[] args) throws Excepcio {
 		// MainAvaluacio.main(args);
-
-		consultesInicials();
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory(MainObjectDB.ODB); // Accés a la factoria
+		EntityManager em = emf.createEntityManager();
+		consultesInicials(em);
 		consultesParametres();
 		consultesPaginacio();
 		consultesJoin();
-	}
-
-	private static void consultesInicials() {
-		// TODO Consultar total, màxim, mínima i mitjana puntuacions de preguntes
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory(MainObjectDB.ODB); // Accés a la factoria
-		EntityManager em = emf.createEntityManager();
-
-		Query query = em.createQuery(
-				"SELECT SUM(p.puntuacio), MAX(p.puntuacio), MIN(p.puntuacio), AVG(p.puntuacio) FROM Pregunta p");
-
-		Object[] result = (Object[]) query.getSingleResult();
-
-		System.out.println("Suma Total: " + result[0] + " Maximo: " + result[1] + " Minimo: " + result[2] + " Media: "
-				+ result[3]);
-
 		em.close();
 		emf.close();
-		// TODO Consultar preguntes que continguin el text "cert" ordenades per
+	}
+
+	private static void consultesInicials(EntityManager em) {
+		// Consultar total, màxim, mínima i mitjana puntuacions de preguntes
+
+		System.out.println("------------------------------\nConsulta1");
+
+		Query query1 = em.createQuery(
+				"SELECT SUM(p.puntuacio), MAX(p.puntuacio), MIN(p.puntuacio), AVG(p.puntuacio) FROM Pregunta p");
+
+		Object[] result1 = (Object[]) query1.getSingleResult();
+
+		System.out.println("Suma Total: " + result1[0] + " Maximo: " + result1[1] + " Minimo: " + result1[2]
+				+ " Media: " + result1[3]);
+
+		// Consultar preguntes que continguin el text "cert" ordenades per
 		// puntuació
 
-		// TODO Consultar preguntes verdader o fals que continguin el text "cert" i
+		System.out.println("------------------------------\nConsulta2");
+
+		Query query2 = em.createQuery("SELECT p FROM Pregunta p WHERE p.text LIKE '%cert%' ORDER BY p.puntuacio DESC");
+		@SuppressWarnings("unchecked")
+		List<Pregunta> result2 = query2.getResultList();
+		for (Pregunta pregunta : result2) {
+			System.out.println("Texto: " + pregunta.getText() + " - Puntuación: " + pregunta.getPuntuacio());
+		}
+
+		// Consultar preguntes verdader o fals que continguin el text "cert" i
 		// puntuació inferior o igual a 1
-		// TODO Consultar preguntes que text de més de 50 caràcters, ordenades per mida
+
+		System.out.println("------------------------------\nConsulta3");
+
+		Query query3 = em.createQuery("SELECT p FROM Pregunta p WHERE p.text LIKE '%cert%' and p.puntuacio <= 1");
+		@SuppressWarnings("unchecked")
+		List<Pregunta> result3 = query3.getResultList();
+		for (Pregunta pregunta : result3) {
+			System.out.println("Texto: " + pregunta.getText() + " - Puntuación: " + pregunta.getPuntuacio());
+		}
+
+		// Consultar preguntes que text de més de 50 caràcters, ordenades per mida
 		// del text
-		// TODO Consultar total de preguntes agrupades per puntuació
-		// TODO Consultar els noms dels estudiants dels lliuraments ordenats per nom
+
+		System.out.println("------------------------------\nConsulta4");
+
+		Query query4 = em.createQuery("SELECT p FROM Pregunta p WHERE LENGTH(p.text) > 50 ORDER BY LENGTH(p.text)");
+		@SuppressWarnings("unchecked")
+		List<Pregunta> result4 = query4.getResultList();
+		for (Pregunta pregunta : result4) {
+			System.out.println("Texto: " + pregunta.getText() + " - Puntuación: " + pregunta.getPuntuacio());
+		}
+
+		// Consultar total de preguntes agrupades per puntuació
+
+		System.out.println("------------------------------\nConsulta5");
+
+		Query query5 = em.createQuery(
+				"SELECT p.puntuacio, COUNT(p) FROM Pregunta p WHERE LENGTH(p.text) > 50 GROUP BY p.puntuacio");
+		@SuppressWarnings("unchecked")
+		List<Object[]> result5 = query5.getResultList();
+		for (Object[] row : result5) {
+			System.out.println("Puntuación: " + row[0] + " - Total: " + row[1]);
+		}
+
+		// Consultar els noms dels estudiants dels lliuraments ordenats per nom
+
 		// TODO Consultar els noms dels estudiants en majúscules i els cognoms en
 		// minúscules ordenats per edat
 		// TODO Consultar 10 primers caràcters del text de les preguntes ordenats per
