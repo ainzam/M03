@@ -88,6 +88,9 @@ public class MainObjectDB {
 
 		// Consultar els noms dels estudiants dels lliuraments ordenats per nom
 
+		Query query6 = em.createQuery(
+				"SELECT p.puntuacio, COUNT(p) FROM Pregunta p WHERE LENGTH(p.text) > 50 GROUP BY p.puntuacio");
+
 		// TODO Consultar els noms dels estudiants en majúscules i els cognoms en
 		// minúscules ordenats per edat
 		// TODO Consultar 10 primers caràcters del text de les preguntes ordenats per
