@@ -2,69 +2,69 @@ package m3.uf5.pt1;
 
 import java.io.Serializable;
 import java.util.LinkedList;
-import java.util.Queue; // Importar Queue en lugar de List
 import java.util.Objects;
+import java.util.Queue; // Importar Queue en lugar de List
 
-public class Usuari implements Comparable<Usuari>,Serializable {
-    
-    /**
+public class Usuari implements Comparable<Usuari>, Serializable {
+
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	public static final int JUNIOR_LIMIT = 2;
-    public static final int SENIOR_LIMIT = 5;
-    
-    private String nick;
-    private String mail;
-    public Queue<Publicacio> publicacions;
-    
-    public Usuari() {
-        // Constructor sin argumentos
-    }
+	public static final int SENIOR_LIMIT = 5;
 
-    public Usuari(String nick, String mail) {
-        this.nick = nick;
-        this.mail = mail;
-        this.publicacions = new LinkedList<>();
-    }
-    
-    public String getNick() {
-        return nick;
-    }
+	private String nick;
+	private String mail;
+	public Queue<Publicacio> publicacions;
 
-    public void setNick(String nick) {
-        this.nick = nick;
-    }
+	public Usuari() {
+		// Constructor sin argumentos
+	}
 
-    public String getMail() {
-        return mail;
-    }
+	public Usuari(String nick, String mail) {
+		this.nick = nick;
+		this.mail = mail;
+		this.publicacions = new LinkedList<>();
+	}
 
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-    
-    public void afegirPublicacio(Publicacio publicacio) {
-        if (publicacio != null) {
-            publicacions.offer(publicacio);
-        }
-    }
-    
-    public String nivellUsuari() {
-        int numPublicacions = publicacions.size();
-        if (numPublicacions <= JUNIOR_LIMIT) {
-            return "Júnior";
-        } else if (numPublicacions <= SENIOR_LIMIT) {
-            return "Sènior";
-        } else {
-            return "Màster";
-        }
-    }
-    
-    @Override
-    public int compareTo(Usuari other) {
-        return this.mail.compareTo(other.mail);
-    }
+	public String getNick() {
+		return nick;
+	}
+
+	public void setNick(String nick) {
+		this.nick = nick;
+	}
+
+	public String getMail() {
+		return mail;
+	}
+
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+
+	public void afegirPublicacio(Publicacio publicacio) {
+		if (publicacio != null) {
+			publicacions.offer(publicacio);
+		}
+	}
+
+	public String nivellUsuari() {
+		int numPublicacions = publicacions.size();
+		if (numPublicacions <= JUNIOR_LIMIT) {
+			return "Júnior";
+		} else if (numPublicacions <= SENIOR_LIMIT) {
+			return "Sènior";
+		} else {
+			return "Màster";
+		}
+	}
+
+	@Override
+	public int compareTo(Usuari other) {
+		return this.mail.compareTo(other.mail);
+	}
 
 	@Override
 	public int hashCode() {
@@ -73,15 +73,16 @@ public class Usuari implements Comparable<Usuari>,Serializable {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()) {
 			return false;
+		}
 		Usuari other = (Usuari) obj;
 		return Objects.equals(mail, other.mail);
 	}
-
-
 }

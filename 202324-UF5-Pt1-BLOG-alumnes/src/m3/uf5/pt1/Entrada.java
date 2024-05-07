@@ -8,7 +8,7 @@ import java.util.Stack;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.WordUtils;
 
-public class Entrada extends Publicacio implements Comparable<Entrada>,Serializable  {
+public class Entrada extends Publicacio implements Comparable<Entrada>, Serializable {
 
 	/**
 	 * 
@@ -18,9 +18,9 @@ public class Entrada extends Publicacio implements Comparable<Entrada>,Serializa
 	public static final String NOT_PROVIDED = "NA";
 	private String titol;
 	private Stack<Comentari> comentaris;
-	
+
 	public Entrada() {
-	    // Constructor sin argumentos
+		// Constructor sin argumentos
 	}
 
 	public Entrada(Usuari usuari, String titol, String text) {
@@ -35,30 +35,30 @@ public class Entrada extends Publicacio implements Comparable<Entrada>,Serializa
 	}
 
 	public String valoracioMitjaEntrada() {
-	    if (comentaris.isEmpty()) {
-	        return NOT_PROVIDED;
-	    }
+		if (comentaris.isEmpty()) {
+			return NOT_PROVIDED;
+		}
 
-	    double sumaValoracions = 0;
-	    Iterator<Comentari> iterator = comentaris.iterator();
-	    while (iterator.hasNext()) {
-	        sumaValoracions += iterator.next().getValoracio();
-	    }
+		double sumaValoracions = 0;
+		Iterator<Comentari> iterator = comentaris.iterator();
+		while (iterator.hasNext()) {
+			sumaValoracions += iterator.next().getValoracio();
+		}
 
-	    double mitjaValoracio = sumaValoracions / comentaris.size();
-	    return String.format("%.1f", mitjaValoracio);
+		double mitjaValoracio = sumaValoracions / comentaris.size();
+		return String.format("%.1f", mitjaValoracio);
 	}
 
 	public int totalValoracionsPerValor(int valor) {
-	    int totalValoracions = 0;
-	    Iterator<Comentari> iterator = comentaris.iterator();
-	    while (iterator.hasNext()) {
-	        Comentari comentari = iterator.next();
-	        if (comentari.getValoracio() == valor) {
-	            totalValoracions++;
-	        }
-	    }
-	    return totalValoracions;
+		int totalValoracions = 0;
+		Iterator<Comentari> iterator = comentaris.iterator();
+		while (iterator.hasNext()) {
+			Comentari comentari = iterator.next();
+			if (comentari.getValoracio() == valor) {
+				totalValoracions++;
+			}
+		}
+		return totalValoracions;
 	}
 
 	public String getTitol() {
@@ -71,31 +71,30 @@ public class Entrada extends Publicacio implements Comparable<Entrada>,Serializa
 
 	@Override
 	public String imprimirPublicacio(String ident, int width) {
-	    StringBuilder sb = new StringBuilder();
-	    
-	    String tituloCentrado = StringUtils.center(titol, width);
+		StringBuilder sb = new StringBuilder();
 
-	    String separacion = StringUtils.center(StringUtils.repeat("-", titol.length()), width);
+		String tituloCentrado = StringUtils.center(titol, width);
 
-	    sb.append(tituloCentrado).append("\n");
-	    sb.append(separacion).append("\n\n");
+		String separacion = StringUtils.center(StringUtils.repeat("-", titol.length()), width);
 
-	    String[] lineasTexto = WordUtils.wrap(text, width ).split(System.lineSeparator());
-	    for (String linea : lineasTexto) {
-	        sb.append(linea).append("\n");
-	    }
-	    return sb.toString();
+		sb.append(tituloCentrado).append("\n");
+		sb.append(separacion).append("\n\n");
+
+		String[] lineasTexto = WordUtils.wrap(text, width).split(System.lineSeparator());
+		for (String linea : lineasTexto) {
+			sb.append(linea).append("\n");
+		}
+		return sb.toString();
 	}
 
-
-    @Override
-    public int compareTo(Entrada otraEntrada) {
-        int resultado = this.data.compareTo(otraEntrada.data);
-        if (resultado == 0) {
-            resultado = this.titol.compareTo(otraEntrada.titol);
-        }
-        return resultado;
-    }
+	@Override
+	public int compareTo(Entrada otraEntrada) {
+		int resultado = this.data.compareTo(otraEntrada.data);
+		if (resultado == 0) {
+			resultado = this.titol.compareTo(otraEntrada.titol);
+		}
+		return resultado;
+	}
 
 	@Override
 	public int hashCode() {
@@ -104,12 +103,15 @@ public class Entrada extends Publicacio implements Comparable<Entrada>,Serializa
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()) {
 			return false;
+		}
 		Entrada other = (Entrada) obj;
 		return Objects.equals(titol, other.titol);
 	}
@@ -121,6 +123,5 @@ public class Entrada extends Publicacio implements Comparable<Entrada>,Serializa
 	public void setComentaris(Stack<Comentari> comentaris) {
 		this.comentaris = comentaris;
 	}
-
 
 }

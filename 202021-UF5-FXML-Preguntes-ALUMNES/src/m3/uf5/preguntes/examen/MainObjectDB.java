@@ -87,16 +87,39 @@ public class MainObjectDB {
 		}
 
 		// Consultar els noms dels estudiants dels lliuraments ordenats per nom
+		System.out.println("------------------------------\nConsulta6");
 
-		Query query6 = em.createQuery(
-				"SELECT p.puntuacio, COUNT(p) FROM Pregunta p WHERE LENGTH(p.text) > 50 GROUP BY p.puntuacio");
+		Query query6 = em.createQuery("SELECT DISTINCT l.estudiant.nom FROM Lliurament l ORDER BY l.estudiant.nom");
+		List<String> result6 = query6.getResultList();
+		for (String nom : result6) {
+			System.out.println("nom: " + nom);
+		}
 
-		// TODO Consultar els noms dels estudiants en majúscules i els cognoms en
+		// Consultar els noms dels estudiants en majúscules i els cognoms en
 		// minúscules ordenats per edat
-		// TODO Consultar 10 primers caràcters del text de les preguntes ordenats per
+		System.out.println("------------------------------\nConsulta7");
+
+		Query query7 = em.createQuery("SELECT UPPER(e.nom), LOWER(e.cognoms) FROM Estudiant e ORDER BY e.edat");
+		@SuppressWarnings("unchecked")
+		List<Object[]> result7 = query7.getResultList();
+		for (Object[] resultado : result7) {
+			String nombreEnMayusculas = (String) resultado[0];
+			String apellidosEnMinusculas = (String) resultado[1];
+			System.out.println("Nombre: " + nombreEnMayusculas + ", Apellidos: " + apellidosEnMinusculas);
+		}
+
+		// Consultar 10 primers caràcters del text de les preguntes ordenats per
 		// puntuació descendent
-		// TODO Consultar 10 darrers caràcters del text de les preguntes ordenats per
+		System.out.println("------------------------------\nConsulta8");
+		Query query8 = em.createQuery("SELECT SUBSTRING(p.text, 1, 10) FROM Pregunta p ORDER BY p.puntuacio DESC");
+		List<String> result8 = query8.getResultList();
+		for (String nom : result8) {
+			System.out.println("10 primers caràcters : " + nom);
+		}
+
+		// Consultar 10 darrers caràcters del text de les preguntes ordenats per
 		// puntuació ascendent
+
 		// TODO Consulta el text de les preguntes traient espais del principi i del
 		// final
 		// TODO Consulta el text de les preguntes traient els caràcters ': ' del final
